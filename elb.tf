@@ -1,6 +1,6 @@
 resource "aws_elb" "elb" {
   name            = "elb"
-  subnets         = [aws_subnet.dev-subnet-1.id]
+  subnets         = [aws_subnet.dev-subnet-1.id, aws_subnet.dev-subnet-2.id, aws_subnet.dev-subnet-3.id]
   security_groups = [aws_security_group.elb_sg.id]
   listener {
     instance_port     = 80

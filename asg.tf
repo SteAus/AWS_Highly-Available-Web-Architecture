@@ -9,7 +9,7 @@ resource "aws_autoscaling_group" "dev-asg" {
 }
 resource "aws_launch_template" "dev_launch_template" {
   name_prefix            = "dev-launch-template"
-  image_id               = "ami-0a8b4cd432b1c3063"
+  image_id               = "ami-00255b41d2c6e881b"
   instance_type          = "t2.micro"
   vpc_security_group_ids = [aws_security_group.asg_instance_sg.id]
 }
@@ -34,5 +34,5 @@ resource "aws_security_group_rule" "instance_sg_allow_elb_health_return" {
   to_port                  = 0
   source_security_group_id = aws_security_group.elb_sg.id
   protocol                 = "-1"
-  security_group_id        = aws_security_group.asg_instance_sg
+  security_group_id        = aws_security_group.asg_instance_sg.id
 }

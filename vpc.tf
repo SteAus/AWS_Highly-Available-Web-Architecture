@@ -34,3 +34,13 @@ resource "aws_subnet" "dev-subnet-3" {
 resource "aws_internet_gateway" "igw" {
   vpc_id = aws_vpc.dev-vpc.id
 }
+resource "aws_default_route_table" "dev-vpc-rt" {
+  default_route_table_id = aws_vpc.dev-vpc.default_route_table_id
+  route {
+    cidr_block = "0.0.0.0/0"
+    gateway_id = aws_internet_gateway.igw.id
+  }
+  tags = {
+    name = "dev-vpc-rt"
+  }
+}

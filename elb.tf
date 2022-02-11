@@ -15,6 +15,13 @@ resource "aws_elb" "elb" {
     lb_port           = 80
     lb_protocol       = "http"
   }
+  listener {
+    instance_port     = 443
+    instance_protocol = "https"
+    lb_port           = 443
+    lb_protocol       = "https"
+    ssl_certificate_id = var.acm-cert
+  }
 }
 resource "aws_security_group" "elb_sg" {
   vpc_id = aws_vpc.dev-vpc.id
@@ -24,8 +31,8 @@ resource "aws_security_group" "elb_sg" {
 }
 resource "aws_security_group_rule" "elb_sg_allow_http" {
   type              = "ingress"
-  from_port         = 80
-  to_port           = 80
+  from_port         = 443
+  to_port           = 443
   cidr_blocks       = ["0.0.0.0/0"]
   protocol          = "tcp"
   security_group_id = aws_security_group.elb_sg.id

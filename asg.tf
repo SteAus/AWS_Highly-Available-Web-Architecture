@@ -28,7 +28,7 @@ resource "aws_security_group_rule" "instance_sg_allow_http" {
   protocol          = "-1"
   security_group_id = aws_security_group.asg_instance_sg.id
 }
-resource "aws_security_group_rule" "instance_sg_allow_elb_health_return" {
+resource "aws_security_group_rule" "instance_sg_allow_elb" {
   type                     = "ingress"
   from_port                = 0
   to_port                  = 0

@@ -1,3 +1,2 @@
 # Highly Available Web Architecture
-![Resistent-Web-Architecture](https://user-images.githubusercontent.com/98794737/153785086-29d0bfdb-6a90-41b9-8714-b78e72335ae5.png)
-
+![Resistent-Web-Architecture](https://user-images.githubusercontent.com/98794737/154002380-3d97efdc-840d-45b6-9c87-045730b1b553.png)

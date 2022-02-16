@@ -1,8 +1,8 @@
 resource "aws_autoscaling_group" "dev-asg" {
   name                = "dev-asg"
   vpc_zone_identifier = [aws_subnet.dev-subnet-1.id, aws_subnet.dev-subnet-2.id, aws_subnet.dev-subnet-3.id]
-  max_size            = 6
-  min_size            = 2
+  max_size            = 3
+  min_size            = 3
   launch_template {
     id = aws_launch_template.dev_launch_template.id
   }

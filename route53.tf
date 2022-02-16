@@ -1,5 +1,5 @@
 resource "aws_acm_certificate" "acm-cert" {
-  domain_name       = aws_route53_record.www.fqdn
+  domain_name       = var.domain
   validation_method = "DNS"
 
 }

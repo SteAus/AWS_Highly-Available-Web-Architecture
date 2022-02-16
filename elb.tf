@@ -14,7 +14,7 @@ resource "aws_elb" "elb" {
     instance_protocol  = "http"
     lb_port            = 443
     lb_protocol        = "https"
-    ssl_certificate_id = var.acm-cert
+    ssl_certificate_id = aws_acm_certificate.acm-cert.id
   }
 }
 resource "aws_security_group" "elb_sg" {

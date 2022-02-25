@@ -10,7 +10,6 @@ resource "aws_db_instance" "dev_rds" {
   parameter_group_name    = "default.mysql8.0"
   option_group_name       = "default:mysql-8-0"
   multi_az                = "true"
-  availability_zone       = aws_subnet.private-subnet-1.availability_zone
   backup_retention_period = 1
   skip_final_snapshot     = true
   db_subnet_group_name    = aws_db_subnet_group.dev_rds_subnet_group.name

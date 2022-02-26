@@ -8,6 +8,7 @@ variable "secret_key" {
 }
 provider "aws" {
   region     = "us-east-1"
-  access_key = var.key
-  secret_key = var.secret
+  #For var file
+  ##access_key = var.key
+  ##secret_key = var.secret
 }

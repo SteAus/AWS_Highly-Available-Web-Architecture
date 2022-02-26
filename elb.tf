@@ -10,7 +10,7 @@ resource "aws_elb" "elb" {
     timeout             = 5
   }
   listener {
-    instance_port      = 80
+    instance_port      = 8080
     instance_protocol  = "http"
     lb_port            = 443
     lb_protocol        = "https"

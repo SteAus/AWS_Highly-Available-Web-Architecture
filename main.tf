@@ -1,18 +1,17 @@
 variable "access_key" {
-  type = string
+  type    = string
   default = ""
 }
 variable "secret_key" {
-  type = string
+  type    = string
   default = ""
 }
 variable "domain" {
-  type = string
-  default =""
+  type    = string
+  default = ""
 }
 provider "aws" {
-  region     = "us-east-1"
-  #For var file
-  ##access_key = var.key
-  ##secret_key = var.secret
+  region = "us-east-1"
+  access_key = var.access_key
+  secret_key = var.secret_key
 }
